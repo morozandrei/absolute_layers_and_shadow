@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Absolute Layers</title>
+    <style>
+        body {
+            background-color: #333;
+            height: 2000px;
+        }
+        .parent {
+            display: inline-block;
+            border: 3px solid green;
+            padding: 5px;
+        }
+        .parent>div {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+        .child-1 {
+            background-color: orange;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+        }
+        .child-2 {
+            background-color: red;
+            bottom: 50px;
+            left: 50px;
+            z-index: 0;
+        }
+        .child-3 {
+            background-color: yellow;
+            bottom: 100px;
+            left: 100px;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="parent">
+        <div class="child-1">1</div>
+        <div class="child-2">2</div>
+        <div class="child-3">3</div>
+    </div>
+    
+</body>
+</html>
