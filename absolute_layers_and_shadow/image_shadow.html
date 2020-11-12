@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #333;
+        }
+        .shadow {
+            border: 5px solid white;
+            display: inline-block;
+            padding: 10px;
+            position: relative;
+            padding-bottom: 0;
+            font-size: 0; /* HW: rule for remove white space below image */
+        }
+        /* block of independent rules for remove white space below image */                                
+        /*.shadow img {                     
+            display: block;          
+        }*/
+        /*.shadow img {
+            vertical-align: bottom;
+        }*/
+        /*.shadow img {
+            float: left;
+        }*/
+        .shadow::after {
+            content: "";
+            /*background-color: orange;*/
+            display: block;
+            width: 400px;
+            height: 600px;
+            
+            position: absolute;
+            top: 10px;
+            /* read about css gradients */
+            background-image: linear-gradient(black,transparent,black);
+        }
+    </style>
+</head>
+<body>
+
+    <figure class="shadow">
+        <img src="images/earth-fall-colors-400x600.jpg" alt="Fall colors">
+    </figure>    
+    
+</body>
+</html>
